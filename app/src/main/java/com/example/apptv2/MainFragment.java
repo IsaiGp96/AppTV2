@@ -30,13 +30,40 @@ public class MainFragment extends BrowseSupportFragment {
     private void cargarFilas() {
         HeaderItem categoria1 = new HeaderItem(0,"Peliculas");
         HeaderItem categoria2 = new HeaderItem(0,"Series");
+        HeaderItem categoria3 = new HeaderItem(0,"Vídeojuegos");
+        HeaderItem categoria4 = new HeaderItem(0,"Deportes");
+
         ArrayObjectAdapter adapterFila1 = new ArrayObjectAdapter(new MyPresenter());
         adapterFila1.add(new SingleRowView("Duna", getContext().getResources().getDrawable(R.drawable.duna)));
         adapterFila1.add(new SingleRowView("Avengers", getContext().getResources().getDrawable(R.drawable.avengers)));
         adapterFila1.add(new SingleRowView("Marvels", getContext().getResources().getDrawable(R.drawable.marvels)));
         adapterFila1.add(new SingleRowView("Guerra Mundial Z", getContext().getResources().getDrawable(R.drawable.z)));
+
+        ArrayObjectAdapter adapterFila2 = new ArrayObjectAdapter(new MyPresenter());
+        adapterFila2.add(new SingleRowView("The Walkind Dead", getContext().getResources().getDrawable(R.drawable.twd)));
+        adapterFila2.add(new SingleRowView("How I Meet Your Mother", getContext().getResources().getDrawable(R.drawable.himym)));
+        adapterFila2.add(new SingleRowView("The Big Bang Theory", getContext().getResources().getDrawable(R.drawable.tbbt)));
+        adapterFila2.add(new SingleRowView("One Punch Man", getContext().getResources().getDrawable(R.drawable.opm)));
+        adapterFila2.add(new SingleRowView("Solo Leveling", getContext().getResources().getDrawable(R.drawable.sl)));
+
+        ArrayObjectAdapter adapterFila3 = new ArrayObjectAdapter(new MyPresenter());
+        adapterFila3.add(new SingleRowView("Metal Gear Solid", getContext().getResources().getDrawable(R.drawable.mgs)));
+        adapterFila3.add(new SingleRowView("Forza Horizon", getContext().getResources().getDrawable(R.drawable.fh)));
+        adapterFila3.add(new SingleRowView("Project Zomboid", getContext().getResources().getDrawable(R.drawable.pz)));
+        adapterFila3.add(new SingleRowView("Civilization VI", getContext().getResources().getDrawable(R.drawable.cv)));
+
+        ArrayObjectAdapter adapterFila4 = new ArrayObjectAdapter(new MyPresenter());
+        adapterFila4.add(new SingleRowView("Steelers vs Browns", getContext().getResources().getDrawable(R.drawable.stl)));
+        adapterFila4.add(new SingleRowView("New York vs Baltimore", getContext().getResources().getDrawable(R.drawable.ny)));
+        adapterFila4.add(new SingleRowView("Lakers vs Bulls", getContext().getResources().getDrawable(R.drawable.lk)));
+        adapterFila4.add(new SingleRowView("Barcelona vs Real Madrid", getContext().getResources().getDrawable(R.drawable.fcb)));
+
         ArrayObjectAdapter windowAdapter = new ArrayObjectAdapter(new ListRowPresenter());
+
         windowAdapter.add(new ListRow(categoria1,adapterFila1));
+        windowAdapter.add(new ListRow(categoria2,adapterFila2));
+        windowAdapter.add(new ListRow(categoria3,adapterFila3));
+        windowAdapter.add(new ListRow(categoria4,adapterFila4));
         setAdapter(windowAdapter);
 
     }
