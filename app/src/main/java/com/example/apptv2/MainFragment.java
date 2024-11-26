@@ -32,6 +32,9 @@ public class MainFragment extends BrowseSupportFragment {
         HeaderItem categoria2 = new HeaderItem(0,"Series");
         HeaderItem categoria3 = new HeaderItem(0,"Vídeojuegos");
         HeaderItem categoria4 = new HeaderItem(0,"Deportes");
+        HeaderItem categoria5 = new HeaderItem(0,"Anime");
+        HeaderItem categoria6 = new HeaderItem(0,"Historia");
+        HeaderItem categoria7 = new HeaderItem(0,"Podcast");
 
         ArrayObjectAdapter adapterFila1 = new ArrayObjectAdapter(new MyPresenter());
         adapterFila1.add(new SingleRowView("Duna", getContext().getResources().getDrawable(R.drawable.duna)));
@@ -58,12 +61,33 @@ public class MainFragment extends BrowseSupportFragment {
         adapterFila4.add(new SingleRowView("Lakers vs Bulls", getContext().getResources().getDrawable(R.drawable.lk)));
         adapterFila4.add(new SingleRowView("Barcelona vs Real Madrid", getContext().getResources().getDrawable(R.drawable.fcb)));
 
+        ArrayObjectAdapter adapterFila5 = new ArrayObjectAdapter(new MyPresenter());
+        adapterFila5.add(new SingleRowView("Dan da dan", getContext().getResources().getDrawable(R.drawable.dan)));
+        adapterFila5.add(new SingleRowView("One punch man", getContext().getResources().getDrawable(R.drawable.opm)));
+        adapterFila5.add(new SingleRowView("Solo leveling", getContext().getResources().getDrawable(R.drawable.sl)));
+        adapterFila5.add(new SingleRowView("Evangelion", getContext().getResources().getDrawable(R.drawable.eva)));
+
+        ArrayObjectAdapter adapterFila6 = new ArrayObjectAdapter(new MyPresenter());
+        adapterFila6.add(new SingleRowView("WWII", getContext().getResources().getDrawable(R.drawable.wwii)));
+        adapterFila6.add(new SingleRowView("WWI", getContext().getResources().getDrawable(R.drawable.wwi)));
+        adapterFila6.add(new SingleRowView("ARPA Net", getContext().getResources().getDrawable(R.drawable.arpa)));
+        adapterFila6.add(new SingleRowView("Tec news", getContext().getResources().getDrawable(R.drawable.tec)));
+
+        ArrayObjectAdapter adapterFila7 = new ArrayObjectAdapter(new MyPresenter());
+        adapterFila7.add(new SingleRowView("Seleccion natural", getContext().getResources().getDrawable(R.drawable.pc1)));
+        adapterFila7.add(new SingleRowView("Mushoku Tensei", getContext().getResources().getDrawable(R.drawable.pc2)));
+        adapterFila7.add(new SingleRowView("Que se arme el deporte", getContext().getResources().getDrawable(R.drawable.dp)));
+        adapterFila7.add(new SingleRowView("Historias chidas", getContext().getResources().getDrawable(R.drawable.pc3)));
+
         ArrayObjectAdapter windowAdapter = new ArrayObjectAdapter(new ListRowPresenter());
 
         windowAdapter.add(new ListRow(categoria1,adapterFila1));
         windowAdapter.add(new ListRow(categoria2,adapterFila2));
         windowAdapter.add(new ListRow(categoria3,adapterFila3));
         windowAdapter.add(new ListRow(categoria4,adapterFila4));
+        windowAdapter.add(new ListRow(categoria5,adapterFila5));
+        windowAdapter.add(new ListRow(categoria6,adapterFila6));
+        windowAdapter.add(new ListRow(categoria7,adapterFila7));
         setAdapter(windowAdapter);
 
     }
